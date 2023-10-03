@@ -409,6 +409,8 @@ def generate_parameter_map(rpc_blocks, full_signature, param_values):
 
     # Append type index for each parameter value
     for i, param in enumerate(param_values):
+        if full_signature[i] == '':
+            continue
         param_type = full_signature[i]
 
         # If parameter is of type list, append index of list type
@@ -422,6 +424,8 @@ def generate_parameter_map(rpc_blocks, full_signature, param_values):
 
     # For each indexed parameter append type and value indicies
     for i, param in enumerate(param_values):
+        if full_signature[i] == '':
+            continue
         param_type = full_signature[i]
 
         # If parameter is a string object, append value index
